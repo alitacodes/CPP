@@ -3,10 +3,10 @@
 
 using namespace std;
 
-
 int main()
 {
-    std::string penguinType = "Icy Penguin";
-    cout << penguinType << endl;
+    string penguinType = "Icy Penguin\t";
+    string para = "is a \"Good\" Penguin";
+    cout << penguinType << para << endl;
     return 0;
 }
