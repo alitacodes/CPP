@@ -13,7 +13,7 @@ int main(){
     while(cupCount > 0){
         cupCount--;         //remaining tea cups are shown after serving the cup
         cout << "Serving a cup of tea\n" << cupCount << " tea cups remaining" << endl;
-        //cupCount--;       //remaining tea cups are shown after serving the cup
+        // cupCount--;       //remaining tea cups are shown before serving the cup 
     }
     cout << "All tea cups are served. " << endl;
     return 0;

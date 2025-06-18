@@ -24,7 +24,7 @@ int main(){
             cout << "Price of rose plant is $" << price ;
             break;
         case 3: 
-            price = 1;
+            price = 2;
             cout << "Price of cactus plant is $" << price ;
             break;
         default: cout << "Invalid choice! Try again.";

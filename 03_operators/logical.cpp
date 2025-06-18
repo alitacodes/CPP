@@ -19,7 +19,7 @@ int main()
         cout << "You are eligible for book subscription discount :D" ;
     }
     else{
-        cout << "You are not eligible for book subscription discount :P" ;
+        cout << "You are not eligible for book subscription discount :(" ;
     }
     return 0;
 }
