@@ -12,7 +12,7 @@ int *ptr (int books){
 
 int main(){
     int books = 3;
-    int *booksOrder = ptr(books);
+    int *booksOrder = ptr(books);       //ptr is the pointer functions
 
     for(int i = 0 ; i < books ; i++){
         cout << "Number of Book " << i + 1 << " ordered : " << booksOrder[i] << endl; 
