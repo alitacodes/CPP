@@ -8,12 +8,12 @@ using namespace std;
 class Library{
     public:
     // class memebers (attributes)
-    string bookName;    //name of the book
+    string *bookName;    //name of the book
     int issueNum;       //number of books issued 
     vector<string> index;       // topics in index
 
     void bookDetails (){
-        cout << "Book name: " << bookName << endl;
+        cout << "Book name: " << *bookName << endl;
         cout << "Number of books issued: " << issueNum << endl;
         cout << "Book Details: " ;
         for(string i : index){
@@ -24,10 +24,23 @@ class Library{
 
     //any operations can be inside the constructor(as it is a func)
     Library(string name , int issue , vector<string> contents){
-        bookName = name;
+        bookName = new string (name);
         issueNum = issue;
         index = contents;
         cout << "Parameter Constructor called here" << endl;
+    }
+
+    //copy constructor
+    Library(const Library& copy){       //const keyword is used so that the values in copy are constant not variables
+        bookName = new string(*copy.bookName);
+        issueNum = copy.issueNum;
+        index = copy.index;
+        cout << "Copy Constructor called here" << endl;
+    }
+
+    ~Library(){
+        delete bookName;
+        cout << "Destructor called here! ";
     }
 };
 
@@ -35,17 +48,17 @@ int main(){
     Library blackhole("theory of blackhole" , 1 , {"about" , "chapter one" , "chapter two"}) ;        
     //the constructor is called at this line where the object (default Book) is created
     
-    blackhole.bookDetails();
+    //blackhole.bookDetails();
 
     Library copiedBook = blackhole;
-    copiedBook.bookDetails();
+    //copiedBook.bookDetails();
 
-    blackhole.bookName = "stephen hawkings";    // *due to this
+    *blackhole.bookName = "stephen hawkings";    // *due to this
 
-    cout << "Blackhole" << endl;
+    cout << "=====Blackhole=====" << endl;
     blackhole.bookDetails();        // *only the book name gets updated in the parent object
 
-    cout << "Copied Version" << endl;
+    cout << "=====Copied Version=====" << endl;
     copiedBook.bookDetails();       // *no changes occur here (the previuos value is printed)
     
     return 0;
