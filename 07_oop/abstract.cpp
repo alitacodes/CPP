@@ -9,6 +9,8 @@ using namespace std;
 //abstract class
 class Tea{
     public:
+
+        //virtual chize user se chupe rahengi
         virtual void prepareIngredients() = 0;     //pure vitual function
         virtual void brew() = 0;     //pure vitual function
         virtual void serve() = 0;     //pure vitual function
